@@ -28,5 +28,5 @@ Qt se compose de 2 parties ; Qt Designer et partie codage.
 <p> Notre application  devrait avoir toutes les fonctionnalités de l'application principale telles que les menus, les actions et la barre d'outils. L'application doit stocker une archive de toutes les tâches en attente et terminées</p>
 <p> notre design  d'application est :</p>
 ![app](https://raw.githubusercontent.com/souha-ila/TodoApp/main/app.PNG)
-
+j
 ```cpp
