@@ -71,6 +71,8 @@ Voici un aperçu des menus :
    
    # Les classes qu'on va utiliser dans ce projet sont:
    
+    [QDate Class](https://doc.qt.io/qt-5/qdate.html)
+   
    <ul>
    <li>
      [QDate Class](https://doc.qt.io/qt-5/qdate.html)
