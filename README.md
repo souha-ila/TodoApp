@@ -71,11 +71,10 @@ Voici un aperçu des menus :
    
    # Les classes qu'on va utiliser dans ce projet sont:
    
-    [QDate Class](https://doc.qt.io/qt-5/qdate.html)
    
    <ul>
    <li>
-     [QDate Class](https://doc.qt.io/qt-5/qdate.html)
+ [ToDo Application using containers](https://anassbelcaid.github.io/CS311/todoapp/)
     </li>
      
    <li>  [QFile Class](https://doc.qt.io/qt-5/qfile.html)  </li>
