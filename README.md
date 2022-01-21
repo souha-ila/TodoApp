@@ -166,7 +166,7 @@ void MainWindow::on_actionPending_Tasks_triggered()
 ```
 
 
- Nous allons maintenant ajouter la fonction  l'action New_Task pour  cela, nous devons créer une boîte de dialogue permettant d'afficher Une description  indiquant le texte et l'objectif de la tâche ,Un booléen terminé indiquant si la tâche est terminée ou due. et une tâche contenant un DueDate qui stocke la date prévue pour la date.
+ Nous allons maintenant ajouter la fonction de l'action New_Task pour  cela, nous devons créer une boîte de dialogue permettant d'afficher Une description  indiquant le texte et l'objectif de la tâche ,Un booléen terminé indiquant si la tâche est terminée ou due. et une tâche contenant un DueDate qui stocke la date prévue pour la date.
 
 ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/dialogu.PNG)
 
@@ -262,6 +262,11 @@ void MainWindow::Task(QString file){
 }
 
 ```
+
+## MVC Model
+
+Essayon maintenant de passer à un modèle plus compliqué en utilisant 
+[QTableView](https://doc.qt.io/qt-5/qtableview.html)
 
 
 
