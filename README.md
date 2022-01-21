@@ -41,7 +41,34 @@ Qt se compose de 2 parties ; Qt Designer et partie codage.
 
 L'utilisation des connaissances reçues dans le cour permet de créer une mise en page simple pour notre application "TodoAPP" avec mainwindow.ui comme indiqué sur l'image ci-dessous:
 
-![MainWindow](https://raw.githubusercontent.com/souha-ila/TodoApp/main/app.PNG)
+![app](https://raw.githubusercontent.com/souha-ila/TodoApp/main/app.PNG)
+
+Voici un aperçu des menus :
+ 
+ ![**](https://raw.githubusercontent.com/souha-ila/TodoApp/main/File.jpg)
+ 
+ ![**](https://raw.githubusercontent.com/souha-ila/TodoApp/main/options.png)
+ 
+ Vous pouvez choisir votre propre style avec la classe [QPalette](https://doc.qt.io/qt-5/qpalette.html)
+  qui contient des groupes de couleurs pour chaque état de widget;Il suffit d'aller sur le widget  clique droit puis Modifier la feille de style
+  
+  ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/droit.png)
+  
+  ou bien aller directement sur filtre puis *Palette*
+  
+  ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/filter.PNG)
+  
+  Qt va afficher la page suivante:
+  
+  ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/palette.PNG)
+  
+  
+  Nons seulement cela, mais On peut aussi avec  Qt Designer utiliser des *Icônes* par l'ajout d'un fichier de ressources et ajoutez un ensemble d'icônes  de votre choix.
+  
+  ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/Icons.PNG)
+  
+  
+  
 
 
 
