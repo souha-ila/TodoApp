@@ -16,17 +16,28 @@ Qt se compose de 2 parties ; Qt Designer et partie codage.
 
 
 
-## ETAPE1: La creation du Projet
+##La creation du Projet
 
  créer le projet Ensuite, choisir la BaseClass de QMainWindow  car  QMainWindow a une interface utilisateur prédéfinie ; barre de menus, une barre d'état, une barre d'outils et d'autres widgets .
  
 
 
 ![MainWindow](https://raw.githubusercontent.com/souha-ila/TodoApp/main/main.PNG)
-## ETAPE2:OVERVIEW
-<p>Ouvrez le fichier Votrefile.ui et il ouvrira automatiquement le fichier dans Qt Designer.</p>
-<p> Notre application  devrait avoir toutes les fonctionnalités de l'application principale telles que les menus, les actions et la barre d'outils. L'application doit stocker une archive de toutes les tâches en attente et terminées</p>
-<p> notre design  d'application est : </p>
-![appp](https://raw.githubusercontent.com/souha-ila/TodoApp/main/app.PNG)
+##Caractéristiques :
+<p>Dans cette application de la ToDoList, l'utilisateur aura les options suivantes :</p>
+<ul>
+  <li>  Un utilisateur devrait pouvoir fermer l'application bien sûr. </li>
+  <li> Une application Todo ne peut être utile que si elle offre la possibilité de créer de nouvelles tâches .  </li>
+  <li>  La vue du widget principal doit être divisée en trois zones :
+  <ul>
+   <li> La première zone (et persistante) affiche la liste des tâches du jour .  </li>
+    <li> Le second est réservé aux tâches en attente (tâches pour le futur).  </li>
+    <li> Enfin, le troisième montre l'ensemble des tâches terminées .  </li>
+  </ul>
+  </li>
+  <li>  les tâches saisies dans votre application doivent rester dans l'application lors d'une utilisation future.  </li>
+</ul>
 
-```cpp
+
+
+
