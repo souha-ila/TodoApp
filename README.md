@@ -72,11 +72,13 @@ Voici un aperçu des menus :
    # Les classes qu'on va utiliser dans ce projet sont:
    
    <ul>
-   <li> [QDate Class](https://doc.qt.io/qt-5/qdate.html) /li>
+   <li>
+     [QDate Class](https://doc.qt.io/qt-5/qdate.html)
+    </li>
      
-   <li>  [QFile Class](https://doc.qt.io/qt-5/qfile.html)  /li>
+   <li>  [QFile Class](https://doc.qt.io/qt-5/qfile.html)  </li>
      
-   <li>  [QTextStream Class](https://doc.qt.io/qt-5/qtextstream.html)  /li>
+   <li>  [QTextStream Class](https://doc.qt.io/qt-5/qtextstream.html)  </li>
      
   </ul>
    
