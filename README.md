@@ -16,14 +16,16 @@ Qt se compose de 2 parties ; Qt Designer et partie codage.
 
 
 
-##La creation du Projet
+## La creation du Projet
 
  créer le projet Ensuite, choisir la BaseClass de QMainWindow  car  QMainWindow a une interface utilisateur prédéfinie ; barre de menus, une barre d'état, une barre d'outils et d'autres widgets .
  
 
 
 ![MainWindow](https://raw.githubusercontent.com/souha-ila/TodoApp/main/main.PNG)
-##Caractéristiques :
+
+## Caractéristiques :
+
 <p>Dans cette application de la ToDoList, l'utilisateur aura les options suivantes :</p>
 <ul>
   <li>  Un utilisateur devrait pouvoir fermer l'application bien sûr. </li>
