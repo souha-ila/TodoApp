@@ -67,9 +67,190 @@ Voici un aperçu des menus :
   
   ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/Icons.PNG)
   
-  
-  
+  ## Fonctionnalité
+   
+   # Les classes qu'on va utiliser dans ce projet sont:
+   
+   <ul>
+   <li>[QDate Class](https://doc.qt.io/qt-5/qdate.html)/li>
+   <li>[QFile Class](https://doc.qt.io/qt-5/qfile.html)/li>
+   <li>[QTextStream Class](https://doc.qt.io/qt-5/qtextstream.html)/li>
+  </ul>
+   
+   Maintenant,  essayont de coder la fonctionnalité de l'appication .
+   On commence par la declarationde  la fonction makeConnexion()  dans .H pour connecter toutes les actions. :
+   
+   ```cpp
 
+ void makeConnexion();
+
+```
+
+puis la  créeration des slots:
+
+   ```cpp
+
+private slots:
+
+    void on_actionNew_Task_triggered();
+
+    void on_actionFinished_Tasks_triggered();
+
+    void on_actionPending_Tasks_triggered();
+
+    void on_actionClose_triggered();
+
+```
+Nous allons maintenant ajouter la connexion dans makeConnexion :
+
+   ```cpp
+
+void MainWindow::makeConnexion(){
+    connect(ui->actionClose,&QAction::triggered,this,&MainWindow::close);
+
+    connect(ui->actionNew_Task,&QAction::triggered,this,&MainWindow::on_actionNew_Task_triggered);
+
+    connect(ui->actionFinished_Tasks,&QAction::triggered,this,&MainWindow::on_actionFinished_Tasks_triggered);
+    connect(ui->actionPending_Tasks, &QAction::triggered,this , &MainWindow::on_actionPending_Tasks_triggered);
+
+}
+
+```
+
+Enfin pour la partie intéressante, la mise en place des slots:
+Pour *EXIT*
+
+ ```cpp
+void MainWindow::on_actionClose_triggered()
+{
+        qApp->quit();
+}
+
+```
+Pour *Finished_Tasks*
+
+ ```cpp
+
+void MainWindow::on_actionFinished_Tasks_triggered()
+{
+    QString widget = ui->pendingTask->currentItem()->text();
+
+    ui->Finished->addItem(widget);
+    QListWidgetItem *remWidget = ui->pendingTask->currentItem();
+    delete remWidget;
+}
+
+
+```
+Pour *Pending_Tasks
+ ```cpp
+
+void MainWindow::on_actionPending_Tasks_triggered()
+{
+    QString widget = ui->Finished->currentItem()->text();
+
+    ui->pendingTask->addItem(widget);
+    QListWidgetItem *remWidget = ui->Finished->currentItem();
+    delete remWidget;
+}
+
+
+```
+Pour µµµµµµµ******************************
+  
+   ```cpp
+void MainWindow::Task(QString file){
+    QFile fichier(file);
+
+    if(fichier.open(QIODevice::ReadOnly | QIODevice::Text))  
+    {
+        QTextStream flux(&fichier);
+        while(!flux.atEnd())
+        {
+            QString temp = flux.readLine();
+            if(  temp.startsWith("Finished"))
+            ui->Finished->addItem(temp);
+            else if( temp.startsWith("Pending"))
+                    ui->pendingTask->addItem(temp);
+            else
+                ui->taskForToday->addItem(temp);
+        }
+        fichier.close();
+    }
+
+
+
+}
+
+
+
+```
+ Nous allons maintenant ajouter la fonction pour l'action New_Task pour  cela, nous devons créer une boîte de dialogue permettant d'afficher Une description  indiquant le texte et l'objectif de la tâche ,Un booléen terminé indiquant si la tâche est terminée ou due. et une tâche contenant un DueDate qui stocke la date prévue pour la date.
+
+![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/dialogu.PNG)
+
+Maintenant, Nous allons implémenter la fonction on_actionNew_Task_triggered():
+  
+ ```cpp
+
+void MainWindow::on_actionNew_Task_triggered()
+{
+
+    Dialog D ;
+    D.setModal(false);
+    D.exec();
+
+
+    QString NewTask ;
+    QString description = D.Description();
+    if (description!=NULL){
+        //bool Finished 
+        QString finished = D.Finished();
+       //current date
+         QDate curDate = D.Due();
+        NewTask = description +"\t Due:"+ curDate.toString() ;
+        QString Tag= D.Tag();
+        if(Tag == "Work")
+            Tag="0";
+        else if (Tag == "Life")
+            Tag="1";
+        else
+            Tag="2";
+         if (finished=="finished" || curDate < QDate::currentDate())
+         {
+             NewTask = "Finished\t"+NewTask+"\tTag :"+Tag+"\n";
+              ui->Finished->addItem(NewTask);
+}
+         else if (curDate == QDate::currentDate()){
+              NewTask = "For Today\t"+NewTask+"\tTag :"+Tag+"\n";
+                ui->taskForToday->addItem(NewTask);
+         }
+         else{
+                 NewTask = "Pending\t"+NewTask+"\tTag :"+Tag+"\n";
+            }
+    }
+    QString fichier = "file.txt";
+
+    QFile file(fichier); 
+
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+
+    QTextStream out(&file);
+    out << NewTask;
+    file.close();
+    }
+
+}
+
+
+
+```
+ ```cpp
+
+
+
+
+```
 
 
 
