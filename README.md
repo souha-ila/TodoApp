@@ -50,7 +50,7 @@ Voici un aperçu des menus :
  ![**](https://raw.githubusercontent.com/souha-ila/TodoApp/main/options.png)
  
  Vous pouvez choisir votre propre style avec la classe [QPalette](https://doc.qt.io/qt-5/qpalette.html)
-  qui contient des groupes de couleurs pour chaque état de widget;Il suffit d'aller sur le widget  clique droit puis Modifier la feille de style
+  qui contient des groupes de couleurs pour chaque état de widget; Il suffit d'aller sur le widget,  clique droit puis Modifier la feille de style
   
   ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/droit.png)
   
@@ -83,7 +83,7 @@ Voici un aperçu des menus :
  
    
    Maintenant,  essayont de coder la fonctionnalité de l'appication .
-   On commence par la declarationde  la fonction makeConnexion()  dans .H pour connecter toutes les actions. :
+   On commence par la declarationde  la fonction makeConnexion()  dans .H pour connecter toutes les actions:
    
    ```cpp
 
@@ -91,7 +91,7 @@ Voici un aperçu des menus :
 
 ```
 
-puis la  créeration des slots:
+puis la  créeation des slots:
 
    ```cpp
 
@@ -123,6 +123,7 @@ void MainWindow::makeConnexion(){
 ```
 
 Enfin pour la partie intéressante, la mise en place des slots:
+
 Pour *EXIT*
 
  ```cpp
@@ -147,7 +148,9 @@ void MainWindow::on_actionFinished_Tasks_triggered()
 
 
 ```
+
 Pour *Pending_Tasks
+
  ```cpp
 
 void MainWindow::on_actionPending_Tasks_triggered()
@@ -161,36 +164,9 @@ void MainWindow::on_actionPending_Tasks_triggered()
 
 
 ```
-Pour µµµµµµµ******************************
-  
-   ```cpp
-void MainWindow::Task(QString file){
-    QFile fichier(file);
-
-    if(fichier.open(QIODevice::ReadOnly | QIODevice::Text))  
-    {
-        QTextStream flux(&fichier);
-        while(!flux.atEnd())
-        {
-            QString temp = flux.readLine();
-            if(  temp.startsWith("Finished"))
-            ui->Finished->addItem(temp);
-            else if( temp.startsWith("Pending"))
-                    ui->pendingTask->addItem(temp);
-            else
-                ui->taskForToday->addItem(temp);
-        }
-        fichier.close();
-    }
 
 
-
-}
-
-
-
-```
- Nous allons maintenant ajouter la fonction pour l'action New_Task pour  cela, nous devons créer une boîte de dialogue permettant d'afficher Une description  indiquant le texte et l'objectif de la tâche ,Un booléen terminé indiquant si la tâche est terminée ou due. et une tâche contenant un DueDate qui stocke la date prévue pour la date.
+ Nous allons maintenant ajouter la fonction  l'action New_Task pour  cela, nous devons créer une boîte de dialogue permettant d'afficher Une description  indiquant le texte et l'objectif de la tâche ,Un booléen terminé indiquant si la tâche est terminée ou due. et une tâche contenant un DueDate qui stocke la date prévue pour la date.
 
 ![](https://raw.githubusercontent.com/souha-ila/TodoApp/main/dialogu.PNG)
 
@@ -250,12 +226,46 @@ void MainWindow::on_actionNew_Task_triggered()
 
 
 ```
+
+Enfin, les tâches saisies dans Notre  application doivent rester dans l'application lors d'une utilisation future.
+afin de realiser cela nous avons besoin dune autre fonction ,on va la declarer dans mainwindow.H
+
  ```cpp
+ 
+ void Task(QString File);
+ ```
+ 
+Et voila l'implementation de cette dernière:
+  
+   ```cpp
+void MainWindow::Task(QString file){
+    QFile fichier(file);
+
+    if(fichier.open(QIODevice::ReadOnly | QIODevice::Text))  
+    {
+        QTextStream flux(&fichier);
+        while(!flux.atEnd())
+        {
+            QString temp = flux.readLine();
+            if(  temp.startsWith("Finished"))
+            ui->Finished->addItem(temp);
+            else if( temp.startsWith("Pending"))
+                    ui->pendingTask->addItem(temp);
+            else
+                ui->taskForToday->addItem(temp);
+        }
+        fichier.close();
+    }
 
 
 
+}
 
 ```
+
+
+
+
 
 
 
