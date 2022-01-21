@@ -72,16 +72,15 @@ Voici un aperçu des menus :
    # Les classes qu'on va utiliser dans ce projet sont:
    
    
-   <ul>
-   <li>
- [ToDo Application using containers](https://anassbelcaid.github.io/CS311/todoapp/)
-    </li>
+   
+ [QDate Class](https://anassbelcaid.github.io/CS311/todoapp/)
+    
      
-   <li>  [QFile Class](https://doc.qt.io/qt-5/qfile.html)  </li>
+  [QFile Class](https://doc.qt.io/qt-5/qfile.html) 
      
-   <li>  [QTextStream Class](https://doc.qt.io/qt-5/qtextstream.html)  </li>
+   [QTextStream Class](https://doc.qt.io/qt-5/qtextstream.html) 
      
-  </ul>
+ 
    
    Maintenant,  essayont de coder la fonctionnalité de l'appication .
    On commence par la declarationde  la fonction makeConnexion()  dans .H pour connecter toutes les actions. :
