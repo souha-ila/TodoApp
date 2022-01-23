@@ -263,10 +263,6 @@ void MainWindow::Task(QString file){
 
 ```
 
-## MVC Model
-
-Essayon maintenant de passer à un modèle plus compliqué en utilisant 
-[QTableView](https://doc.qt.io/qt-5/qtableview.html)
 
 
 
